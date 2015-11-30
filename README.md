@@ -1,6 +1,5 @@
 # IDV449 Laboration 2 - Mezzy Labbage
-###Sandra Hansson
-###sh222td
+###Sandra Hansson - sh222td
 
 ##Säkerhetsproblem
 <strong>1. Kvarstående kakor</strong>
