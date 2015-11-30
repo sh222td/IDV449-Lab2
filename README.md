@@ -1,6 +1,6 @@
 # IDV449 Laboration 2 - Mezzy Labbage
-Sandra Hansson
-sh222td
+###Sandra Hansson
+###sh222td
 
 ##Säkerhetsproblem
 <strong>Kvarstående kakor</strong>
@@ -15,6 +15,7 @@ Kvarstående kakor är en risk då det medför att användaren kommer finnas kva
 <strong>Åtgärdning </strong>
 Genom att skapa och kalla på en funktion som förstör kakan/sessionen när personen loggar ut så är problemet åtgärdat.
 
+
 <strong>Manipulering av kakor</strong>
 
 <strong>Problem</strong>
@@ -25,7 +26,8 @@ Detta kan leda till att en hackare kan få tag på en annan användares kaka och
 
 <strong>Åtgärdning</strong> 
 Genom att använda sig utav $_SERVER[‘HTTP_USER_AGENT’] så kan man kontrollera att användaren endast är inloggad på sin egna agent.
------------------------------------------------------
+
+
 <strong>XSS, otillåtna taggar</strong>
 
 <strong>Problem</strong>
@@ -36,7 +38,8 @@ Detta är resultatet av att den inskickade datan inte valideras korrekt vilket k
 
 <strong>Åtgärdning</strong> 
 Man kan åtgärda ett sånt problem på lite olika sätt. Antingen trimmar man texten och kör på ett regex uttryck för <,>, / och kör en replace när sådant uppkommer i texten. Man kan även köra på HTML entity kodning, viktigt och veta här dock är att det endast gäller för html taggar och inte script taggar. För större applikationer så kan man använda sig utav automatiska sanerings bibliotek som OWASPs AntiSamy, ett bibliotek för html och css kod.  (Referens https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
------------------------------------------------------
+
+
 
 ##Prestandaproblem
 <strong>“Log out” knapp vid inlogg</strong>
@@ -49,7 +52,8 @@ Kan uppstå förvirring/irritation för användaren då knappen gör en post men
 
 <strong>Åtgärdning</strong>
 Låt knappen endast visas när personen är inloggad på sidan.
------------------------------------------------------
+
+
 <strong>Kvarstående text efter POST</strong>
 
 <strong>Problem</strong>
