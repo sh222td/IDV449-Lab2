@@ -63,5 +63,5 @@ Eventuell irritation från användaren. Enklare att spamma sidan genom att klick
 
 <strong>Åtgärdning</strong>
 Antingen köra en document.getElementById(‘form’).reset() eller document.getElementById(‘textField’).value=’’ när formuläret  skickats;
------------------------------------------------------
+
 ##Reflektioner
