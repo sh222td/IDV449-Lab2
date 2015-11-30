@@ -14,7 +14,7 @@ Kvarstående kakor är en risk då det medför att användaren kommer finnas kva
 
 <strong>Åtgärdning </strong>
 Genom att skapa och kalla på en funktion som förstör kakan/sessionen när personen loggar ut så är problemet åtgärdat.
------------------------------------------------------
+
 <strong>Manipulering av kakor</strong>
 
 <strong>Problem</strong>
