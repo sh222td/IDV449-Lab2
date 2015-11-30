@@ -3,7 +3,7 @@
 ###sh222td
 
 ##Säkerhetsproblem
-<strong>Kvarstående kakor</strong>
+<strong>1. Kvarstående kakor</strong>
 
 <strong>Problem</strong>
 När användaren loggar ut så förstörs inte kakan, detta leder till är när användaren loggar ut så redirectas man tillbaka till inloggnins sidan men om man lägger till /message i urlen så kommer man in igen som samma användare. Man kan däremot endast se innehållet, inte lägga till nya meddelanden.
@@ -16,7 +16,7 @@ Kvarstående kakor är en risk då det medför att användaren kommer finnas kva
 Genom att skapa och kalla på en funktion som förstör kakan/sessionen när personen loggar ut så är problemet åtgärdat.
 
 
-<strong>Manipulering av kakor</strong>
+<strong>2. Manipulering av kakor</strong>
 
 <strong>Problem</strong>
 Manipulering av en existerande kaka är tillåten mellan olika webbläsare. Loggar jag till exempel in på sidan  på google chrome och kopierar kakans värde via EditThisCookie-plugin, sen går in på samma sida fast på firefox och klistrar in kakans värde via Firebug så kan jag vara inloggad på två olika stället samtidigt. 
@@ -28,7 +28,7 @@ Detta kan leda till att en hackare kan få tag på en annan användares kaka och
 Genom att använda sig utav $_SERVER[‘HTTP_USER_AGENT’] så kan man kontrollera att användaren endast är inloggad på sin egna agent.
 
 
-<strong>XSS, otillåtna taggar</strong>
+<strong>3. XSS, otillåtna taggar</strong>
 
 <strong>Problem</strong>
 I text fältet där man ska skriva in meddelanden så kan man lägga in html taggar som a-taggar, img-taggar, style-taggar och formulär-taggar. 
@@ -42,7 +42,7 @@ Man kan åtgärda ett sånt problem på lite olika sätt. Antingen trimmar man t
 
 
 ##Prestandaproblem
-<strong>“Log out” knapp vid inlogg</strong>
+<strong>1. “Log out” knapp vid inlogg</strong>
 
 <strong>Problem</strong>
 Innan man hunnit logga in så finns det en logga ut knapp
@@ -54,7 +54,7 @@ Kan uppstå förvirring/irritation för användaren då knappen gör en post men
 Låt knappen endast visas när personen är inloggad på sidan.
 
 
-<strong>Kvarstående text efter POST</strong>
+<strong>2. Kvarstående text efter POST</strong>
 
 <strong>Problem</strong>
 När man postat sitt meddelande så rensas inte textfältet i formuläret.
