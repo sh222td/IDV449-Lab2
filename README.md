@@ -39,6 +39,18 @@ Detta är resultatet av att den inskickade datan inte valideras korrekt vilket k
 Man kan åtgärda ett sånt problem på lite olika sätt. Antingen trimmar man texten och kör på ett regex uttryck för <,>, / och kör en replace när sådant uppkommer i texten. Man kan även köra på HTML entity kodning, viktigt och veta här dock är att det endast gäller för html taggar och inte script taggar. För större applikationer så kan man använda sig utav automatiska sanerings bibliotek som OWASPs AntiSamy, ett bibliotek för html och css kod.  (Referens https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
 
 
+<strong>4. SQL injection, inlogg av ej existerande medlem</strong>
+
+<strong>Problem</strong>
+Om man skriver in en valfri mail och 1'or'1=1 som lösenord så kan man logga in trots att mailen inte är registrerad, när man väl är inloggad så kan man se alla inlägg samt posta nya fast under ett namn som redan är registrerat i systemet.
+
+<strong>Konsekvenser</strong>
+Vilken person som helst kan få tillgång till innehållet på sidan utan att vara registrerad och validerad. Denne kan även utge sig vara någon annan då det postas under en redan registrerad användare.
+
+<strong>Åtgärdning</strong> 
+Genom att hålla osäker data separerad fårn kommandon och queries så kan man förebygga mot attacker. Exempel på sådana lösningar att använda ett säkert API som undviker användning av tolken helt och hållet. Man måste dock fortfarande vara kritiskt mot API:er som med lagrade procedurer då det fortfarande kan införa dolda injections. 
+
+
 
 ##Prestandaproblem
 <strong>1. “Log out” knapp vid inlogg</strong>
