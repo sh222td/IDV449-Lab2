@@ -23,16 +23,16 @@ Manipulering av en existerande kaka är tillåten mellan olika webbläsare. Logg
 Detta kan leda till att en hackare kan få tag på en annan användares kaka och utnyttja den. Bryter mot A2: Bruten autentisering och sessions hantering.
 
 <strong>Åtgärd</strong> 
-Genom att använda sig utav $_SERVER[‘HTTP_USER_AGENT’] som returnerar så kan man kontrollera att användaren endast är inloggad på sin egna agent.
+Genom att använda sig utav $_SERVER[‘HTTP_USER_AGENT’] som returnerar så kan man kontrollera att användaren endast är inloggad på sin egna agent, om man använder sig utav php. Man bör även se till så att kontrollerna för hantering av sessioner och autensiering möter upp kraven som defineras i OWASPs Application Security Verification Standard.
 
 
 <strong>3: A3.XSS, otillåtna taggar</strong>
 
 <strong>Problem</strong>
-I text fältet där man ska skriva in meddelanden så kan man lägga in html taggar som a-taggar, img-taggar, style-taggar och formulär-taggar.
+I text fältet där man ska skriva in meddelanden så kan man lägga in html taggar som a-taggar, img-taggar, style-taggar och formulär-taggar. Då XSS är den vanligaste säkerhetsbristen så är det inte en ovanlighet att en webbsita kan vara oskyddad mot det, som tur är så är den väldigt lätt att upptäcka. (Ref. [3])
 
 <strong>Konsekvenser</strong>
-Detta är resultatet av att den inskickade datan inte valideras korrekt vilket kan leda till att en användare med onda tankar lurar okunniga användare till att gå in på osäkra och fientliga sidor.
+Detta är resultatet av att den inskickade datan inte valideras korrekt vilket kan leda till att en hackare kan utföra skript i en oventandes användare webbläsare för att stjäla dess sessioner, dirigera om användaren till osäkra sidor eller vanställa hemsidor.
 
 <strong>Åtgärd</strong> 
 Man kan åtgärda ett sånt problem på lite olika sätt. Antingen trimmar man texten och kör på ett regex uttryck för <,>, / och kör en replace när sådant uppkommer i texten. Man kan även köra på HTML entity kodning, viktigt och veta här dock är att det endast gäller för html taggar och inte script taggar. För större applikationer så kan man använda sig utav automatiska sanerings bibliotek som OWASPs AntiSamy, ett bibliotek för html och CSS kod. (Ref. [3])
@@ -123,14 +123,14 @@ Kontrollera att kakor endast skapas om inloggningen lyckades.
 
 
 ##Referenser
-[1] OWASP, OWASP Top 10 - 2013, sida 6
+[1] OWASP, "OWASP Top 10 - 2013", sida 6
 
-[2] OWASP, OWASP Top 10 - 2013, sida 8
+[2] OWASP, "OWASP Top 10 - 2013", sida 8
 
-[3] OWASP, OWASP Top 10 - 2013, sida 9
+[3] OWASP, "OWASP Top 10 - 2013", sida 9
 
-[4] OWASP, OWASP Top 10 - 2013, sida 10
+[4] OWASP, "OWASP Top 10 - 2013", sida 10
 
-[5] OWASP, OWASP Top 10 - 2013, sida 12
+[5] OWASP, "OWASP Top 10 - 2013", sida 12
 
 
