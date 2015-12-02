@@ -121,6 +121,7 @@ Kontrollera att kakor endast skapas om inloggningen lyckades.
 
 ##Reflektioner
 
+Jag tycker att den här laborationen har varit väldigt givande och lärorik, jag har även fått en djupare insikt i hur blottade webbsidor egentligen är från attacker. Att få jobba med att testa en webbsida gjorde det hela mycket mer underhållande med än att vi skulle exempelvist bara fått läsa på om säkerhet.
 
 ##Referenser
 [1] OWASP, "OWASP Top 10 - 2013", sida 6
