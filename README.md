@@ -2,7 +2,7 @@
 ###Sandra Hansson - sh222td
 
 ##Säkerhetsproblem
-<strong>1. A2.Bruten autentisiering och sessions-hantering, Kvarstående kakor</strong>
+<strong>1. A2.Bruten autentisering och sessions-hantering, Kvarstående kakor</strong>
 
 <strong>Problem</strong>
 När användaren loggar ut förstörs inte kakan, detta leder till att när användaren loggar ut så omderigeras man tillbaka till inloggningssidan men om man lägger till "/message" i url'en kommer man in igen som samma användare. Man kan däremot endast se innehållet, inte lägga till nya meddelanden. Kakan förstörs endast när man stänger ner webbläsaren vilket visar att det antagligen används sessions-kakor för inloggshantering.
@@ -14,7 +14,7 @@ Kvarstående kakor är en risk då det medför att användaren kommer finnas kva
 Genom att skapa och kalla på en funktion som förstör kakan/sessionen när personen loggar ut blir problemet åtgärdat.
 
 
-<strong>2: A2.Bruten autentisiering och sessions-hantering, Manipulering av kakor</strong>
+<strong>2: A2.Bruten autentisering och sessions-hantering, Manipulering av kakor</strong>
 
 <strong>Problem</strong>
 Manipulering av en existerande kaka är tillåten mellan olika webbläsare. Loggar jag till exempel in på sidan på Google Chrome, kopierar kakans värde via EditThisCookie-plugin, går in på samma sida igen fast på Firefox och klistrar in kakans värde via Firebug så kan jag vara inloggad på två olika stället samtidigt.
