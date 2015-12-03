@@ -53,7 +53,7 @@ Genom att hålla osäker data separerad från kommandon och queries så kan man 
 <strong>5: A4.Osäker objektreferering </strong>
 
 <strong>Problem</strong>
-När man startar servern och applikationen så får man informationen om vart databas filen finns. Skriver man in denna filsökväg (static/message.db) så laddas databasen ner med användarna och inlägg. Man kunde även gå djupare bland filerna och få ut bilderna (static/images/"filnamn"). Detta problem sker relativt ofta då applikationer använder sig utav det riktiga namnet eller nyckeln av objekt när webb sidan genereras.
+När man startar servern och applikationen så får man informationen om vart databas filen finns. Skriver man in denna filsökväg (static/message.db) så laddas databasen ner med användarna och inlägg. Man kunde även gå djupare bland filerna och få ut bilderna (static/images/"filnamn"). Detta problem sker relativt ofta då applikationer använder sig utav det riktiga namnet eller nyckeln av objekt när webb sidan genereras (Ref. [4]).
 
 <strong>Konsekvenser</strong>
 Detta problem leder till att hackaren kan få tillgång till känslig data i applikationen och utgöra en risk för alla som använder den. I fallet som testare så visste jag sökvägen men då det inte var en svår sökväg hade det inte varit svårt för en hackare att gissa fram det.
@@ -64,7 +64,7 @@ Man bör se till så att man skyddar varje användares tillgängliga objekt vilk
 <strong>6: A6.Exponering av känslig data</strong>
 
 <strong>Problem</strong>
-När jag upptäckte problem nummer fem (A4.Osäker objektreferering) så kunde man även se att lösenorden sparades i klartext i databasen, då lösenorden är det känsligaste datan som den här applikationen håller så anser jag det vara en stor risk.
+När jag upptäckte problem nummer fem (A4.Osäker objektreferering) så kunde man även se att lösenorden sparades i klartext i databasen, då lösenorden är det känsligaste datan som den här applikationen håller så anser jag det vara en stor risk. De vanligaste anledningarna till såna här misstag är att man helt enkelt inte valt at lägga ner tid på att kryptera datan ordentligt eller att man använt sig utav uråldriga och svaga algoritmer. (Ref. [5])
 
 <strong>Konsekvenser</strong>
 Att en användare kan utgöra sig för att vara någon annan är farligt nog men då även Admin lösenord var blottat så kan en användare med onda aningar göra stor skada på applikationen och dess användare.
@@ -85,30 +85,7 @@ Att länka in skriptet i head taggen kan medföra att det tar längre tid för h
 <strong>Åtgärd</strong>
 Då det i detta fall inte är en större applikation så anser jag det inte spela någon större roll vart den är placerad, för snabbare rendering så kan man flytta inläsningen av skriptet längst ner på sidan.
 
-<strong>2. “Log out” knapp vid inloggning</strong>
-
-<strong>Problem</strong>
-Innan man hunnit logga in så finns det en logga-ut knapp
-
-<strong>Konsekvenser</strong>
-Kan uppstå förvirring/irritation för användaren då knappen gör en post men inget händer.
-
-<strong>Åtgärd</strong>
-Låt knappen endast visas när personen är inloggad på sidan.
-
-
-<strong>3. Kvarstående text efter POST</strong>
-
-<strong>Problem</strong>
-När man postat sitt meddelande så rensas inte textfältet i formuläret.
-
-<strong>Konsekvenser</strong>
-Eventuell irritation från användaren. Enklare att spamma sidan genom att klicka Enter flera gånger.
-
-<strong>Åtgärd</strong>
-Antingen köra en document.getElementById(‘form’).reset() eller document.getElementById(‘textField’).value=’’ när formuläret  skickats;
-
-<strong>4. Kaka skapas efter felaktigt inlogg</strong>
+<strong>2. Kaka skapas efter felaktigt inlogg</strong>
 
 <strong>Problem</strong>
 När man loggar in med oregistrerade uppgifter så skapas det en kaka trots att man inte loggas in, denna kaka tillåter dock inte användaren att kunna se inläggen som den manipulerade kakan kunde (Säkerhetsproblem 2).
@@ -120,6 +97,7 @@ Det skapas en onödig kaka
 Kontrollera att kakor endast skapas om inloggningen lyckades.
 
 ##Reflektioner
+Efter att ha studerat och testat applikationen så upptäckte jag även lite småsaker som inte utgjorde någon fara men som räknades mer som förvirrings- eller irritationsmoment hos användaren. Ett av problemen var att man kunde se en "log out" knapp på inlogningssidan, detta är egentligen bara ett simpelt fel som går att lösa genom att placera funktionen i rätt vy. Ett annat moment var när man postar sitt meddelande. Skriften kvarstår nämligen i textfältet vilket får det att se slarvigt ut i applikationen, det medför även att man enklare kan spamma sitt meddelande. Det problemet kan lätt lösas genom att köra en document.getElementById(‘form’).reset() eller document.getElementById(‘textField’).value=’’ när formuläret  skickats;
 
 Jag tycker att den här laborationen har varit väldigt kul och lärorik, jag har även fått en djupare insikt i hur blottade webbsidor egentligen är från attacker. Att få jobba med att testa en webbsida gjorde det hela mycket mer underhållande med än att vi skulle exempelvist bara fått läsa på om säkerhet. Det hade däremot känts mer givande ifall vi även fick lära oss lite konkreta lösningar på hur man skulle förebygga koden mot attacker då vissa förklaringar på OWASPs sida kunde vara lite "flummiga"
 
