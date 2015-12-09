@@ -104,14 +104,14 @@ Jag tycker att den här laborationen har varit väldigt kul och lärorik, jag ha
 I framtida arbeten kommer jag försöka vara mer noggrann med säkerheten och testa sidan efter OWASPs säkerhetspunkter.
 
 ##Referenser
-[1] OWASP, "OWASP Top 10 - 2013", sida 6
+[1] OWASP foundation, "Top 10 2013-A2-Broken Authentication and Session Management", 23 Juni 2013 [Online] Tillgänglig: https://www.owasp.org/index.php/Top_10_2013-A2-Broken_Authentication_and_Session_Management [Hämtad: 9 december, 2015]
 
-[2] OWASP, "OWASP Top 10 - 2013", sida 8
+[2] OWASP foundation, "Top 10 2013-A1-Injection", 23 Juni 2013 [Online] Tillgänglig: https://www.owasp.org/index.php/Top_10_2013-A1-Injection [Hämtad: 9 december, 2015]
 
-[3] OWASP, "OWASP Top 10 - 2013", sida 9
+[3] OWASP foundation, "Top 10 2013-A3-Cross Site Scripting (XSS)", 23 Juni 2013 [Online] Tillgänglig: https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_(XSS) [Hämtad: 9 december, 2015]
 
-[4] OWASP, "OWASP Top 10 - 2013", sida 10
+[4] OWASP foundation, "Top 10 2013-A4-Insecure Direct Object References", 23 Juni 2013 [Online] Tillgänglig: https://www.owasp.org/index.php/Top_10_2013-A4-Insecure_Direct_Object_References [Hämtad: 9 december, 2015]
 
-[5] OWASP, "OWASP Top 10 - 2013", sida 12
+[5] OWASP foundation, "Top 10 2013-A6-Sensitive Data Exposure", 23 Juni 2013 [Online] Tillgänglig: https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure [Hämtad: 9 december, 2015]
 
 
