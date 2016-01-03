@@ -96,6 +96,20 @@ Det skapas en onödig kaka
 <strong>Åtgärd</strong>
 Kontrollera att kakor endast skapas om inloggningen lyckades.
 
+<strong>3. Minifiering</strong>
+
+Något sidan hade kunnat använda sig utav är Minifiering, detta är när man tar bort onödiga karaktärer i koden för att göra filerna mindre vilket leder till att det går snabbare vid inläsningen. Minifierad kod är när alla whitespaces och kommentarer är borttagna. Alla javascriptfilen borde även slås samman för att underlätta för HTTP requesten. Ett vertyg för minifiering är JSMin (http://crockford.com/javascript/jsmin) som är utvecklat av Douglas Crockford.[6]
+
+En annan lösning på problemet hade kunnat vara Obfuscation, detta är dock en mindre bra lösning då det är mer komplex vilket kan leta till fel i koden, det ändrar även symboler i filerna vilken kan leda till problem när man använder sig till exempel utav API funktioner, det gör även koden mer svårläst vilket försvårar debugging.[6]
+
+Minifiering utav CSS brukar inte ge lika mycket reducerat innehåll som JavaScript då CSS oftast har färre kommentarer och whitespaces. Bästa sättet att optimera CSS filerna är att slå ihop identiska klasser, ta bort klasser som inte används, osv. [6]
+
+<strong>4. Komprimering av statiska resurser.</strong>
+Komprimering utav filer innebär att minska deras filstorlek. Den mest effektiva metoden för komprimering är i nuläget Gzip metoden, ett gratis format. En annan metod är deflate, dock mindre populär och mindre effektiv än tidigarenämnd. Filtyper som brukar och bör komprimeras är HTML dokument, CSS- och Javascript-filer. Filer som inte bör Gzippas är bilder och PDF:er då de redan är komprimerade. [7]
+
+
+
+
 ##Reflektioner
 Efter att ha studerat och testat applikationen så upptäckte jag även lite småsaker som inte utgjorde någon fara men som räknades mer som förvirrings- eller irritationsmoment hos användaren. Ett av problemen var att man kunde se en "log out"-knapp på inlogningssidan, detta är egentligen bara ett enkelt fel som går att lösa genom att placera funktionen i rätt vy. Ett annat moment var när man postar sitt meddelande. Skriften kvarstår nämligen i textfältet vilket får det att se slarvigt ut i applikationen, det medför även att man enklare kan spamma sitt meddelande. Det problemet kan lätt lösas genom att köra en document.getElementById(‘form’).reset() eller document.getElementById(‘textField’).value=’’ när formuläret  skickats. De resterande fem säkerthetshålen från OWASP hade jag svårigheter att hitta i denna applikation då jag var osäker på hur man skulle gå tillväga för att testa de, något som jag kommer jobba vidare på i framtiden när man är lite mer insatt i det.
 
@@ -113,5 +127,9 @@ I framtida arbeten kommer jag försöka vara mer noggrann med säkerheten och te
 [4] OWASP foundation, "Top 10 2013-A4-Insecure Direct Object References", 23 Juni 2013 [Online] Tillgänglig: https://www.owasp.org/index.php/Top_10_2013-A4-Insecure_Direct_Object_References [Hämtad: 9 december, 2015]
 
 [5] OWASP foundation, "Top 10 2013-A6-Sensitive Data Exposure", 23 Juni 2013 [Online] Tillgänglig: https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure [Hämtad: 9 december, 2015]
+
+[6] Stevie Souders, Kapitel 10 "Rule 10: Minify JavaScript," i High Performance Web Sites: Essential Knowledge for Front-End Engineers,	O'Reilly Media , 2007, [E-bok] Tillgänglig: https://www.ebooks-it.net/ebook/high-performance-web-sites [Hämtad: 3 januari, 2016]
+
+[7] Stevie Souders, Kapitel 4 "Rule 4: Gzip Components," i High Performance Web Sites: Essential Knowledge for Front-End Engineers,	O'Reilly Media , 2007, [E-bok] Tillgänglig: https://www.ebooks-it.net/ebook/high-performance-web-sites [Hämtad: 3 januari, 2016]
 
 
