@@ -105,9 +105,14 @@ En annan lösning på problemet hade kunnat vara Obfuscation, detta är dock en 
 Minifiering utav CSS brukar inte ge lika mycket reducerat innehåll som JavaScript då CSS oftast har färre kommentarer och whitespaces. Bästa sättet att optimera CSS filerna är att slå ihop identiska klasser, ta bort klasser som inte används, osv. [6]
 
 <strong>4. Komprimering av statiska resurser.</strong>
+
 Komprimering utav filer innebär att minska deras filstorlek. Den mest effektiva metoden för komprimering är i nuläget Gzip metoden, ett gratis format. En annan metod är deflate, dock mindre populär och mindre effektiv än tidigarenämnd. Filtyper som brukar och bör komprimeras är HTML dokument, CSS- och Javascript-filer. Filer som inte bör Gzippas är bilder och PDF:er då de redan är komprimerade. [7]
 
+<strong>5. HTTP Cache Headers</strong>
 
+När en användare besöker en webbsida för första gången så behövs det göras flera HTTP requests men om man använder sig utav en Expires header så kan man göra innehållet och komponenterna cachebara. På så vis görs inga onödiga HTTP anrop för senare besök på samma webbsida. Browsers och Proxies använder sig utav en cache för att minska antalet HTTP anrop och minskar storleken på de. Servern använder en Expires header för att informera klienten att den kan använda samma kopia av komponenten innan den blir stale (att utsatt tid för de cachade komponenterna upphört). 
+
+Ett annat sätt att gå tillväga för att cacha data är att använda sig utav Cache Control som introducerades i HTTP/1.1. Detta är ett säkrare sätt då en Expires använder sig utav ett striktare datum och är inte servern och klienten synkade exakt så fungerar det inte. Istället sätter man en max-age i sin Cache Control för att definera hur länge en komponent ska vara chachad. Det kan dock rekommenderas att ha både Cache Control och Expires för de läsare som inte stödjer HTTP/1.1.[8]
 
 
 ##Reflektioner
@@ -131,5 +136,7 @@ I framtida arbeten kommer jag försöka vara mer noggrann med säkerheten och te
 [6] Stevie Souders, Kapitel 10 "Rule 10: Minify JavaScript," i High Performance Web Sites: Essential Knowledge for Front-End Engineers,	O'Reilly Media , 2007, [E-bok] Tillgänglig: https://www.ebooks-it.net/ebook/high-performance-web-sites [Hämtad: 3 januari, 2016]
 
 [7] Stevie Souders, Kapitel 4 "Rule 4: Gzip Components," i High Performance Web Sites: Essential Knowledge for Front-End Engineers,	O'Reilly Media , 2007, [E-bok] Tillgänglig: https://www.ebooks-it.net/ebook/high-performance-web-sites [Hämtad: 3 januari, 2016]
+
+[8] Stevie Souders, Kapitel 3 "Rule 3: Add an Expires Header," i High Performance Web Sites: Essential Knowledge for Front-End Engineers,	O'Reilly Media , 2007, [E-bok] Tillgänglig: https://www.ebooks-it.net/ebook/high-performance-web-sites [Hämtad: 3 januari, 2016]
 
 
